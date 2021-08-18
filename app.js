@@ -877,9 +877,9 @@ d3.selection.prototype.moveToFront = function() {
 
     var startup = true
 
-    var colors = ['#762a83','#9970ab','#c2a5cf','#e7d4e8','#d9f0d3']
+    var 	colors = ['#fec87f','#8dadd0','#517ead','#1a4e80', '#022a4e']
 
-    var legend_cats = ["-55.4 to -45", "-44.9 to -30", "-29.9 to -15", "-14.9 to 0", "greater than 0"]
+    var legend_cats = ["less than 0", "0 to 9.9", "10 to 24.9", "25 to 99.9", "100 or greater"]
 
 
 
@@ -922,16 +922,16 @@ d3.selection.prototype.moveToFront = function() {
 				//()-55.4 -44.2) (-44.2 -33.0) (-32.9 -21.8) (-21.7 -10.6) (-10.5 0.7)
 				function getTooltipColorScale(index) {
 					var extent = getExtent(index),
-						colors = ['#762a83','#9970ab','#c2a5cf','#e7d4e8','#d9f0d3'],
+						colors = ['#fec87f','#8dadd0','#517ead','#1a4e80', '#022a4e'],
 						colorScale = d3.scale.threshold()
-		    				.domain([-45, -30, -15, 0])
+		    				.domain([0, 10, 25, 100])
 		    				.range(colors);
 								console.log(colorScale(-10.6));
 		    		updateLegend(extent, colors, index);
 		    		return colorScale;
 				}
 
-				d3.tsv("assets/calcs.tsv", function(r){
+				d3.tsv("assets/out_of_state.tsv", function(r){
 					// write values to object using id as proprety name
 					// id is the column name in the spreadsheet that maps to the layout and labels -- U.S. state two-letter abbreviations in default squaire.js settings
 					tooltipData[r.State] = r;
@@ -954,7 +954,7 @@ d3.selection.prototype.moveToFront = function() {
 							mode: 'toggle',
 							el: "#custom-tooltip-toolbox",
 							layout: tooltipBarLayout,
-							whitelist: ["Institution Name", "% change","2002 in-state %", "2018 in-state %"],
+							whitelist: ["Institution Name", "% change","2002 out-of-state %", "2018 out-of-state %"],
 							column1: 'Category',
 							column2: 'Value'
 						}
@@ -990,8 +990,8 @@ d3.selection.prototype.moveToFront = function() {
 
       function build_legend(){
 
-        var circle_x = [20, 120, 225, 330, 435]
-        var circle_x_mob = [10, 100, 185, 260, 335]
+        var circle_x = [35, 140, 225, 325, 420]
+        var circle_x_mob = [10, 100, 185, 260]
         var legend_svg = d3
           .select(".legend-container-map")
           .append("svg")
@@ -1004,7 +1004,7 @@ d3.selection.prototype.moveToFront = function() {
           .append("rect")
           //.attr("x", 10)
           //.attr("y", 10)
-          .attr("width", 550)
+          .attr("width", 450)
           .attr("height", 90)
           .attr("stroke", "black")
           .attr("stroke-width", 3)
@@ -1068,7 +1068,7 @@ d3.selection.prototype.moveToFront = function() {
 
             legend_svg
             .append("text")
-            .text("Percent change in share of in-state students")
+            .text("Percent change in share of out-of-state students")
             .attr("text-anchor", "middle")
             .attr("x", "50%")
             .attr("y", 20)

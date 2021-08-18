@@ -68,7 +68,7 @@
   font-weight: bold;
   font-size: 20px;
   margin-top: 20px !important;
-  margin-bottom: 10px !important;
+  margin-bottom: 25px !important;
 }
 .logo-container-map {
     width: 50%;
@@ -102,7 +102,7 @@
 }
 
 .source-container-map {
-    width: 55%;
+    width: 50%;
     font-family: "PT Serif", serif;
     font-size: 13px;
     padding: 40px 0;
@@ -341,7 +341,7 @@
   .interactive-container,
   #map_container {
     width: 400px;
-    height: 450px;
+    height: 480px;
     margin: 0 auto;
   }
 
