@@ -894,8 +894,8 @@ d3.selection.prototype.moveToFront = function() {
 
     var 	colors = reds
 
-    var legend_cats = ["less than 0", "0 to 9.9", "10 to 24.9", "25 to 99.9", "100 or greater"]
-var mob_legend_cats = ["<0", "0–9.9", "10–24.9", "25–99.9", "100+"]
+    var legend_cats = ["less than 0", "0 to 9.9", "10 to 24.9", "25 to 49.9", "50 or greater"]
+var mob_legend_cats = ["<0", "0–9.9", "10–24.9", "25–49.9", "50+"]
 
 
 
@@ -939,7 +939,7 @@ var mob_legend_cats = ["<0", "0–9.9", "10–24.9", "25–99.9", "100+"]
 					var extent = getExtent(index),
 						//colors = ['#fec87f','#8dadd0','#517ead','#1a4e80', '#022a4e'],
 						colorScale = d3.scale.threshold()
-		    				.domain([0, 10, 25, 100])
+		    				.domain([0, 10, 25, 50])
 		    				.range(colors);
 								console.log(colorScale(-10.6));
 		    		updateLegend(extent, colors, index);
