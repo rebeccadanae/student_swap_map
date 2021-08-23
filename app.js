@@ -3,7 +3,16 @@
 // Copyright (c) 2013 Justin Palmer
 //
 // Tooltips for d3.js SVG visualizations
-
+function analytics(action) {
+  var label =
+    1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : "null";
+  window.dataLayer.push({
+    event: "Interactive",
+    category: "Interactive",
+    action: action,
+    label: label
+  });
+}
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module with d3 as a dependency.
@@ -728,6 +737,7 @@
 					var hideToolTip = (self.options.tooltip.mode==='toggle' && self.breakpoint.slice(0,5)==='small') || self.options.tooltip.mode==='static';
 					self.tip.show(d, idx, hideToolTip);
 
+          analytics('hover', d.box)
 					// add .active class to <g> in focus and move to front (for z index)
 					d3.selectAll("g.active").classed("active", false);
 					var box = d3.select(this.parentNode).classed("active", true).node();
@@ -821,16 +831,7 @@
 }());
 
 !(function() {
-  function analytics(action) {
-    var label =
-      1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : "null";
-    window.dataLayer.push({
-      event: "Interactive",
-      category: "Interactive",
-      action: action,
-      label: label
-    });
-  }
+
 
 
   function app() {
