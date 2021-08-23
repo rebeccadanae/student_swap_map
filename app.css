@@ -187,7 +187,7 @@
 .squaire-tooltip h6, .squaire-toolbox h6 {
   font-size: 14px;
   margin-bottom: 3px;
-  font-weight: 700px;
+  font-weight: 700;
 }
 .squaire-tooltip p, .squaire-toolbox p {
   margin: 3px 0;
@@ -355,8 +355,8 @@
 }
 
 
-.legend-container-map{
-display:none;
+#custom-tooltip{
+  margin-bottom: 20px;
 }
 
 .show{
@@ -383,7 +383,8 @@ display:none;
   width: 90%;
 }
 .legend_map, .legend-rect{
-  display: none;
+  width: 300px;
+  height: 90px;
 }
 #legend_title_map{
   font-size: 12px;
@@ -400,24 +401,20 @@ display:none;
     height: 450px;
   }
 
-  .search-container{
-    width: 50%;
-  }
+.source-container-map{
+  width: 50%;
+}
 
-  #menus_map{
-    width: 100%;
-    height: 50px;
-    padding-top: 10px;
-    text-align: center;
-    padding-bottom: 20px;
-  }
+#logo-content-map{
+  width: 100px;
+}
+
+#es_logo{
+  width:200px;
+}
 
 
 
-  #time_frame_map{
-    padding-bottom: 15px;
-    width: 100%;
-  }
 
 
 }

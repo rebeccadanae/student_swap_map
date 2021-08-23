@@ -876,11 +876,13 @@ d3.selection.prototype.moveToFront = function() {
     };
 
     var startup = true
+    var blues = ['#fec87f','#8dadd0','#517ead','#1a4e80', '#022a4e']
+    var reds = ['#e0f3f8', '#fee090', '#fdae61', '#f46d43', '#d73027']
 
-    var 	colors = ['#fec87f','#8dadd0','#517ead','#1a4e80', '#022a4e']
+    var 	colors = reds
 
     var legend_cats = ["less than 0", "0 to 9.9", "10 to 24.9", "25 to 99.9", "100 or greater"]
-
+var mob_legend_cats = ["<0", "0–9.9", "10–24.9", "25–99.9", "100+"]
 
 
 
@@ -922,7 +924,7 @@ d3.selection.prototype.moveToFront = function() {
 				//()-55.4 -44.2) (-44.2 -33.0) (-32.9 -21.8) (-21.7 -10.6) (-10.5 0.7)
 				function getTooltipColorScale(index) {
 					var extent = getExtent(index),
-						colors = ['#fec87f','#8dadd0','#517ead','#1a4e80', '#022a4e'],
+						//colors = ['#fec87f','#8dadd0','#517ead','#1a4e80', '#022a4e'],
 						colorScale = d3.scale.threshold()
 		    				.domain([0, 10, 25, 100])
 		    				.range(colors);
@@ -991,7 +993,7 @@ d3.selection.prototype.moveToFront = function() {
       function build_legend(){
 
         var circle_x = [35, 140, 225, 325, 420]
-        var circle_x_mob = [10, 100, 185, 260]
+        var circle_x_mob = [20, 60, 115, 180, 250]
         var legend_svg = d3
           .select(".legend-container-map")
           .append("svg")
@@ -1027,7 +1029,7 @@ d3.selection.prototype.moveToFront = function() {
               .attr("id", "full_legend")
 
               legend_svg.selectAll("myrect")
-                .data(legend_cats)
+                .data(mob_legend_cats)
                 .enter()
                 .append("circle")
                   .attr("id", "legend_circle_map")
@@ -1054,7 +1056,7 @@ d3.selection.prototype.moveToFront = function() {
                   .attr("id", "full_legend")
 
                   legend_svg.selectAll("mylabels")
-                    .data(legend_cats)
+                    .data(mob_legend_cats)
                     .enter()
                     .append("text")
                       .attr("id", "legend_text_map")
