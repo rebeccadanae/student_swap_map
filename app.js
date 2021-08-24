@@ -946,7 +946,7 @@ var mob_legend_cats = ["<0", "0–9.9", "10–24.9", "25–49.9", "50+"]
 		    		return colorScale;
 				}
 
-				d3.tsv("assets/out_of_state.tsv", function(r){
+				d3.tsv("https://c24215cec6c97b637db6-9c0895f07c3474f6636f95b6bf3db172.ssl.cf1.rackcdn.com/interactives/2021/student_swap_map/assets/out_of_state.tsv", function(r){
 					// write values to object using id as proprety name
 					// id is the column name in the spreadsheet that maps to the layout and labels -- U.S. state two-letter abbreviations in default squaire.js settings
 					tooltipData[r.State] = r;
