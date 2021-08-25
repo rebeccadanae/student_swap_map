@@ -71,8 +71,9 @@
   margin-bottom: 25px !important;
 }
 .logo-container-map {
-    width: 50%;
+    width: 45%;
     position: relative;
+    margin: auto;
 }
 
 .legend-container-map{
@@ -151,7 +152,7 @@
 }
 
 #source_content_map {
-  position: absolute;
+  position: relative;
   top: 0;
 }
 
@@ -335,7 +336,9 @@
 .squaire{
   font-family: "franklin-gothic-urw", helvetica, sans serif;
 }
-
+#es_logo{
+  width:200px;
+}
 /* Mobile Styles */
 @media only screen and (max-width: 720px) {
   .interactive-container,
@@ -389,6 +392,8 @@
 #legend_title_map{
   font-size: 12px;
 }
+
+
 }
 
 /* Tablet Styles */
@@ -409,9 +414,7 @@
   width: 100px;
 }
 
-#es_logo{
-  width:200px;
-}
+
 
 
 
