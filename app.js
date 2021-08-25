@@ -691,7 +691,12 @@ function analytics(action) {
 		if(color.length < 5) {
 			color += color.slice(1);
 		}
+    if(color=="#d73027"){
+      return '#fff';
+    }
+    //console.log(color=="#d73027")
 	   return (color.replace('#','0x')) > (0xffffff/2) ? '#333' : '#fff';
+
 	};
 
 	//add the colors! use index property as the data

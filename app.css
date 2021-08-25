@@ -341,7 +341,7 @@
   .interactive-container,
   #map_container {
     width: 400px;
-    height: 480px;
+    /*height: 480px;*/
     margin: 0 auto;
   }
 
@@ -424,8 +424,12 @@
   .interactive-container,
   #map_container {
     width: 700px;
-    height: 550px;
+    /*height: 550px;*/
     margin: 0 auto;
+  }
+
+  #map_container{
+    height: 550px;
   }
   #custom-tooltip{
 
