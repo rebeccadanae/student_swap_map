@@ -899,8 +899,8 @@ d3.selection.prototype.moveToFront = function() {
 
     var 	colors = reds
 
-    var legend_cats = ["less than 0", "0 to 9.9", "10 to 24.9", "25 to 49.9", "50 or greater"]
-var mob_legend_cats = ["<0", "0–9.9", "10–24.9", "25–49.9", "50+"]
+    var legend_cats = ["1% or less", "1.1 to 9.9", "10 to 24.9", "25 to 49.9", "50 or greater"]
+var mob_legend_cats = ["<=1", "1.1–9.9", "10–24.9", "25–49.9", "50+"]
 
 
 
@@ -944,7 +944,7 @@ var mob_legend_cats = ["<0", "0–9.9", "10–24.9", "25–49.9", "50+"]
 					var extent = getExtent(index),
 						//colors = ['#fec87f','#8dadd0','#517ead','#1a4e80', '#022a4e'],
 						colorScale = d3.scale.threshold()
-		    				.domain([0, 10, 25, 50])
+		    				.domain([1.1, 10, 25, 50])
 		    				.range(colors);
 								console.log(colorScale(-10.6));
 		    		updateLegend(extent, colors, index);
@@ -1011,7 +1011,7 @@ var mob_legend_cats = ["<0", "0–9.9", "10–24.9", "25–49.9", "50+"]
       function build_legend(){
 
         var circle_x = [35, 140, 225, 325, 420]
-        var circle_x_mob = [20, 60, 115, 180, 250]
+        var circle_x_mob = [20, 60, 125, 190, 255]
         var legend_svg = d3
           .select(".legend-container-map")
           .append("svg")
